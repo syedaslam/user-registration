@@ -14,14 +14,13 @@ header {
 }
 
 .form-cont {
-  height: 76vh;
+  height: 72vh;
   width: 40vw;
   overflow: auto;
   border-radius: 5px;
   padding: 0 24px;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  /* Firefox */
 }
 
 .form-cont::-webkit-scrollbar {
