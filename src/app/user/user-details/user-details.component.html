@@ -1,0 +1,25 @@
+<header>Registered Users</header>
+<div class="container">
+  <div class="table">
+    <div class="cell header-text">User Name</div>
+    <div class="cell header-text">Email</div>
+    <div class="cell header-text">Address</div>
+    <div class="cell header-text">Action</div>
+  </div>
+  <div class="table" *ngFor="let user of us?.usersList; index as i">
+    <div class="cell">{{user.userName}}</div>
+    <div class="cell">{{user.email}}</div>
+    <div class="cell">
+      <div class="address-cell">
+        <ng-container *ngFor="let address of user?.addressList">
+          <div class="address">City: {{address.city}}, State: {{address.state}}, Pincode: {{address.pincode}}.</div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="cell">
+      <button mat-icon-button (click)="deleteUser(i)">
+        <mat-icon fontIcon="delete_outline"></mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.navbar {
+  background-color: white;
+  padding: 0 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 60px;
+  border-bottom: 1px solid #e1e1e1;
+  box-shadow: -0px 4px 16px 0px #0000001A;
+}
+
+.logo {
+  height: 50px;
+  width: 150px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.user-icon {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.tab-group {
+  border: 1px solid #070707;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tab {
+  padding: .7em 1.5em;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 10em;
+  text-align: center;
+}
+
+.active {
+  background-color: #0290c0;
+  color: white;
+}
+
+.main-container {
+  margin: 4rem 10rem;
+}

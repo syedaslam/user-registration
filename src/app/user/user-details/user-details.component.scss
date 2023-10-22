@@ -1,0 +1,40 @@
+.container {
+  border: 1px solid #e1e1e1;
+  box-shadow: -0px 4px 16px 0px #0000001A;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+
+.table {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e1e1e1;
+
+  .cell {
+    flex: 1;
+    padding: 0.8em 1em;
+  }
+
+  .header-text {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .address-cell {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .address {
+    word-break: break-word;
+    margin: 5px 0;
+  }
+
+}

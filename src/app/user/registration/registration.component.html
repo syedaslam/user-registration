@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="form-cont" [formGroup]="userForm" (submit)="onSubmitForm(userForm.value)">
+    <header>Sign in</header>
+    <section>
+      <div class="custom-fields">
+        <label>user Name*</label>
+        <input type="text" name="username" formControlName="userName" required>
+      </div>
+      <div class="custom-fields">
+        <label>Email</label>
+        <input type="text" name="email" formControlName="email">
+      </div>
+    </section>
+    <section>
+      <b>Address</b>
+      <div formArrayName="addressList" class="address"
+        *ngFor="let item of addressList?.['controls']; index as i; first as first">
+        <div class="_flex-box" *ngIf="!first">
+          <b>Address {{i + 1}} </b>
+          <button class="_ml-auto" type="button" mat-icon-button (click)="onAddAddress(i)">
+            <mat-icon fontIcon="remove"></mat-icon>
+          </button>
+        </div>
+        <div [formGroupName]="i">
+          <div class="custom-fields">
+            <label>City</label>
+            <input type="text" name="city-{{i}}" formControlName="city">
+          </div>
+          <div class="custom-fields">
+            <label>State</label>
+            <input type="text" name="state-{{i}}" formControlName="state">
+          </div>
+          <div class="custom-fields">
+            <label>Pincode</label>
+            <input type="text" name="pincode-{{i}}" formControlName="pincode">
+          </div>
+        </div>
+      </div>
+      <button class="add-btn" type="button" mat-icon-button (click)="onAddAddress()" *ngIf="addressList.length < 5">
+        <mat-icon fontIcon="add"></mat-icon>
+      </button>
+    </section>
+    <section>
+      <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Register</button>
+      <div class="success-msg" *ngIf="onSuccessSubmit">User Registered successfully.</div>
+    </section>
+  </form>
+  <img class="registration" src="../../../assets/registration.webp" />
+</div>
